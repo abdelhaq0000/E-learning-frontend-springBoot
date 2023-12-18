@@ -9,7 +9,6 @@ import { async } from 'regenerator-runtime';
 import { plus, customer1, profile2, profile3 ,Avatar} from '../assets/images';
 
 
-// Define a default UI for filtering
 function GlobalFilter   ({
   preGlobalFilteredRows,
   globalFilter,
@@ -172,12 +171,12 @@ const Table =  ({columns, data}) => {
               )
             )}
           </div>
-          <div>
+          {/* <div>
             <a href="#newuser" className="h-9 px-4 rounded-full bg-coral-red text-white flex items-center justify-center gap-10 font-semibold">
               <i className='bx bxs-graduation text-xl'></i>
               <span>Add Teacher</span>
             </a>
-          </div>
+          </div> */}
       </div>
 
       {/* table */}

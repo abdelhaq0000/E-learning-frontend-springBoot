@@ -10,7 +10,7 @@ import { useNavigate } from 'react-router-dom';
 
 const Users = ({ activeLink }) => {
   const [dataTest, setDataTest] = useState([
-   
+
   ]);
 
   const columns = React.useMemo(
@@ -47,29 +47,26 @@ const Users = ({ activeLink }) => {
     if (localStorage.getItem("role") != "ROLE_ADMIN") {
       navigate("/")
     }
-const token = localStorage.getItem('token');
-const headers = {
-  Authorization: `Bearer ${token}`,
-};
-  axios.get("http://localhost:8080/api/test/Allusers", { headers })
+    const token = localStorage.getItem('token');
+    const headers = {
+      Authorization: `Bearer ${token}`,
+    };
+    axios.get("http://localhost:8080/api/test/Allusers", { headers })
       .then(response => {
-        // Handle the success response
         console.log('Response:', response.data);
         setData(response.data);
       })
       .catch(error => {
-        // Handle the error
         console.error('Error:', error);
       });
-      
-   
+
+
   }, []);
 
   return (
     <main className='my-2 lg:mb-4 lg:mt-6 mx-4 lg:mx-6 z-20'>
       <DashHeader activeLink={activeLink} />
       <Table columns={columns} data={data} />
-      {/* <AddUser /> */}
     </main>
   );
 };
